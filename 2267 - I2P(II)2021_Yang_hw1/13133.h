@@ -1,42 +1,33 @@
+#include <stdio.h>
+#include <stdlib.h>
+
 typedef struct node {
 	struct node* next;
 	int val;
 } Node;
 
 void createLinkedList(Node **head, int N, int *arr) {
-	Node* cur = *head;
 	*head = (Node*)malloc(sizeof(Node));
-	(*head)->val = arr[0];
-	for (int i = 1; i < N; i++) {
-		cur = cur->next = (Node*)malloc(sizeof(Node));
+	(*head)->val = arr[1];
+	Node *cur = *head;
+	for (int i = 2; i <= N; i++) {
+		cur->next = (Node*)malloc(sizeof(Node));
+		cur = cur->next;
 		cur->val = arr[i];
 	}
 	cur->next = *head;
 }
 
 void swapTwoSegment(Node **head, int a, int b, int len) {
-	Node *cura = *head, *curb = *head, *curas, *curbs, *prea = NULL, *preb = NULL;
+	Node *cura = *head, *curb = *head;
 	a--, b--;
-	int len2 = len-1;
-	while (a--) {
-		prea = cura;
+	while (a--) cura = cura->next;
+	while (b--) curb = curb->next;
+	while (len--) {
+		int temp = cura->val;
+		cura->val = curb->val;
+		curb->val = temp;
 		cura = cura->next;
-	}
-	curas = cura;
-	while (len2--) cura = cura->next;
-	while (b--) {
-		preb = curb;
 		curb = curb->next;
-	}
-	curbs = curb;
-	len2 = len-1;
-	while (len2--) curb = curb->next;
-	if (!prea) {
-		prea = *head;
-		while (prea->next != head) prea = prea->next;
-	}
-	if (!preb) {
-		preb = *head;
-		while(preb->next != head) preb = preb->next;
 	}
 }
