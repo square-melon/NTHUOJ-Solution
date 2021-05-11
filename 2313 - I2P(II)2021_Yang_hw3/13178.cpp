@@ -1,6 +1,6 @@
 #include <iostream>
 #include <string>
-#include "13178.h"
+#include "13178_function.cpp"
 using namespace std;
 int main() {
 	/* I/O optimization */
@@ -29,7 +29,6 @@ int main() {
 			int type, a, b;
 			cin >> type >> a;
 			if(type != 4)   cin >> b;
-			
 			if(type == 1) {
 				row[b].merge(row[a], row[b]);
 				row[a].clear();

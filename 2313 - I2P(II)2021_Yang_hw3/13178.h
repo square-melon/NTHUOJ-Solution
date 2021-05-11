@@ -29,7 +29,7 @@ class Node {
 		~Node();
 };
 
-class List {
+class List { 
 	private:
 		Node *head, *tail;	// point to the first and the last node of this linked list
 	public:

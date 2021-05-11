@@ -4,8 +4,10 @@
 Str::Str(char *str) {
     head = new Char(str[0]);
     Char *cur = head;
-    for (int i = 1; i < strlen(str); i++)
-        cur = cur->next = new Char(str[i]);
+    for (int i = 1; i < strlen(str); i++) {
+        cur->next = new Char(str[i]);
+        cur = cur->next;
+    }
     tail = cur;
 }
 
