@@ -104,6 +104,7 @@ int main() {
 			int op;
 			do{
 				op = Rand() % 11;
+				std::cout << op << ":\n";
 			} while (test.stdv.empty() and (op == 3 or op == 5 or op == 6 or op == 2));
 			switch(op) {
 				case 0: test.clear(); break;
