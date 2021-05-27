@@ -1,2 +1,4 @@
 # ignore
 .vscode
+a.exe
+test*.cpp
