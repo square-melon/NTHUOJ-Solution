@@ -1,4 +1,2 @@
+# ignore
 .vscode
-a.exe
-libstdc++-6.dll
-test.cpp
