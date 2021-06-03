@@ -9,7 +9,7 @@ int main() {
     auto cmp = [](const auto a, const auto b) {
         return a.second == b.second ? a.first < b.first : a.second < b.second;
     };
-    set<pair<long, long>, decltype(cmp)> points(cmp);
+    set<pair<long long, long long>, decltype(cmp)> points(cmp);
     int N, Q;
     cin >> N >> Q;
     for (int i = 1; i <= N; i++) {
