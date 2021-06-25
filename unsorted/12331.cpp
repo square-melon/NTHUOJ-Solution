@@ -37,7 +37,7 @@ int main() {
                 }
             }
         } else if (op == "DEQUEUE") {
-            if (Line.size() != 0)
+            if (Line.size() == 0)
                 continue;
             int res = Line.front().front();
             if (Line.front().size() == 1) {
